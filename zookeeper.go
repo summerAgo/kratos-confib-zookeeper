@@ -61,7 +61,7 @@ func (s *source) Load() ([]*config.KeyValue, error) {
 	serviceNamePath := s.options.path
 	data, _, err := s.client.Get(serviceNamePath)
 	if err != nil {
-		fmt.Printf("查询%s失败, err: %v\n", serviceNamePath, err)
+		fmt.Printf("path: %s , err: %v\n", serviceNamePath, err)
 		return nil, err
 	}
 

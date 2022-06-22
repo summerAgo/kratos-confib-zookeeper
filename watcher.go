@@ -27,7 +27,6 @@ func newWatcher(s *source) *watcher {
 
 			select {
 			case e := <-event:
-				// 将监听得到的event放入其专属通道内
 				w.evt <- e
 			}
 		}
@@ -38,7 +37,6 @@ func newWatcher(s *source) *watcher {
 func (s *watcher) Next() ([]*config.KeyValue, error) {
 	for {
 		select {
-		// 专属通道响应
 		case event := <-s.evt:
 			log.Printf("path is %s", event.Path)
 			return s.source.Load()

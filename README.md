@@ -1,2 +1,3 @@
 # kratos-contrib-zookeeper
-kratos框架的zookeeper读取配置
+
+在kratos框架中使用zookeeper读取配置
